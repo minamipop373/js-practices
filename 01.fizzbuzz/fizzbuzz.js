@@ -7,7 +7,7 @@ for (let number = 1; number <= 20; number++) {
   } else if (number % 5 === 0) {
     output = "Buzz";
   } else {
-    output = number;
+    output = String(number);
   }
-  console.log(JSON.stringify(output));
+  console.log(output);
 }
