@@ -37,19 +37,18 @@ const weekDays = ["日", "月", "火", "水", "木", "金", "土"];
 console.log(`     ${monthNames[month]} ${year}`);
 console.log(weekDays.join(" "));
 
-// 月の最初の日の曜日と、月末日を取得
-const firstDay = new Date(year, month, 1).getDay();
-const lastDate = new Date(year, month + 1, 0).getDate();
+const firstDate = new Date(year, month, 1);
+const lastDate = new Date(year, month + 1, 0);
 
 // カレンダー本体
 let output = "";
-for (let i = 0; i < firstDay; i++) {
+for (let i = 0; i < firstDate.getDay(); i++) {
   output += "   "; // 先頭空白（曜日分）
 }
 
-for (let day = 1; day <= lastDate; day++) {
+for (let day = 1; day <= lastDate.getDate(); day++) {
   output += day.toString().padStart(2, " ") + " ";
-  if ((firstDay + day) % 7 === 0) output += "\n";
+  if ((firstDate.getDay() + day) % 7 === 0) output += "\n";
 }
 
 console.log(output);
