@@ -32,10 +32,9 @@ const monthNames = [
   "11月",
   "12月",
 ];
-const weekDays = ["日", "月", "火", "水", "木", "金", "土"];
 
 console.log(`     ${monthNames[month]} ${year}`);
-console.log(weekDays.join(" "));
+console.log("日 月 火 水 木 金 土");
 
 const firstDate = new Date(year, month, 1);
 const lastDate = new Date(year, month + 1, 0);
