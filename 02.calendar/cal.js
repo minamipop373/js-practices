@@ -17,23 +17,7 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
-// 月名と曜日ヘッダー
-const monthNames = [
-  "1月",
-  "2月",
-  "3月",
-  "4月",
-  "5月",
-  "6月",
-  "7月",
-  "8月",
-  "9月",
-  "10月",
-  "11月",
-  "12月",
-];
-
-console.log(`     ${monthNames[month]} ${year}`);
+console.log(`      ${month + 1}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 
 const firstDate = new Date(year, month, 1);
