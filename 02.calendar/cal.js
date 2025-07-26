@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-// 引数処理
 const args = process.argv.slice(2);
 const today = new Date();
 let year = today.getFullYear();
-let month = today.getMonth(); // 0-based
+let month = today.getMonth();
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "-y" && args[i + 1]) {
