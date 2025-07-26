@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const args = process.argv.slice(2);
+const args = process.argv;
 const today = new Date();
 let year = today.getFullYear();
 let month = today.getMonth();
