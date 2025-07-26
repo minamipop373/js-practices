@@ -40,15 +40,11 @@ console.log(weekDays.join(" "));
 const firstDate = new Date(year, month, 1);
 const lastDate = new Date(year, month + 1, 0);
 
-// カレンダー本体
-let output = "";
-for (let i = 0; i < firstDate.getDay(); i++) {
-  output += "   "; // 先頭空白（曜日分）
-}
+let output = `${"   ".repeat(firstDate.getDay())}`;
 
 for (let day = 1; day <= lastDate.getDate(); day++) {
-  output += day.toString().padStart(2, " ") + " ";
-  if ((firstDate.getDay() + day) % 7 === 0) output += "\n";
+  const lineBreak = (firstDate.getDay() + day) % 7 === 0 ? "\n" : "";
+  output = `${output}${String(day).padStart(2, " ")} ${lineBreak}`;
 }
 
 console.log(output);
