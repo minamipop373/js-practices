@@ -8,15 +8,15 @@ let month = today.getMonth(); // 0-based
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "-y" && args[i + 1]) {
-    const y = parseInt(args[i + 1]);
-    if (1970 <= y && y <= 2100) {
-      year = y;
+    const inputYear = parseInt(args[i + 1]);
+    if (1970 <= inputYear && inputYear <= 2100) {
+      year = inputYear;
     }
   }
   if (args[i] === "-m" && args[i + 1]) {
-    const m = parseInt(args[i + 1]);
-    if (m >= 1 && m <= 12) {
-      month = m - 1;
+    const inputMonth = parseInt(args[i + 1]);
+    if (inputMonth >= 1 && inputMonth <= 12) {
+      month = inputMonth - 1;
     }
   }
 }
