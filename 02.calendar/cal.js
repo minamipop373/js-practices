@@ -2,7 +2,7 @@
 
 // 引数処理
 const args = process.argv.slice(2);
-let today = new Date();
+const today = new Date();
 let year = today.getFullYear();
 let month = today.getMonth(); // 0-based
 
