@@ -33,8 +33,13 @@ const lastDate = new Date(year, month + 1, 0);
 let output = "   ".repeat(firstDate.getDay());
 
 for (let day = 1; day <= lastDate.getDate(); day++) {
-  const lineBreak = (firstDate.getDay() + day) % 7 === 0 ? "\n" : "";
-  output = `${output}${String(day).padStart(2, " ")} ${lineBreak}`;
-}
+  const paddedDay = String(day).padStart(2, " ");
+  const isSaturday = (firstDate.getDay() + day - 1) % 7 === 6;
+  const isLastDay = day === lastDate.getDate();
 
+  output += paddedDay;
+  if (!isLastDay) {
+    output += isSaturday ? "\n" : " ";
+  }
+}
 console.log(output);
