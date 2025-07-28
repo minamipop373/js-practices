@@ -30,7 +30,7 @@ console.log("日 月 火 水 木 金 土");
 const firstDate = new Date(year, month, 1);
 const lastDate = new Date(year, month + 1, 0);
 
-let output = `${"   ".repeat(firstDate.getDay())}`;
+let output = "   ".repeat(firstDate.getDay());
 
 for (let day = 1; day <= lastDate.getDate(); day++) {
   const lineBreak = (firstDate.getDay() + day) % 7 === 0 ? "\n" : "";
