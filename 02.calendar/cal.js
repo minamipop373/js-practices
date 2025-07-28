@@ -4,20 +4,24 @@ const args = process.argv;
 const today = new Date();
 let year = today.getFullYear();
 let month = today.getMonth();
+let inputYear;
+let inputMonth;
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "-y" && args[i + 1]) {
-    const inputYear = parseInt(args[i + 1]);
-    if (1970 <= inputYear && inputYear <= 2100) {
-      year = inputYear;
-    }
+    inputYear = parseInt(args[i + 1]);
   }
   if (args[i] === "-m" && args[i + 1]) {
-    const inputMonth = parseInt(args[i + 1]);
-    if (inputMonth >= 1 && inputMonth <= 12) {
-      month = inputMonth - 1;
-    }
+    inputMonth = parseInt(args[i + 1]);
   }
+}
+
+if (1970 <= inputYear && inputYear <= 2100) {
+  year = inputYear;
+}
+
+if (1 <= inputMonth && inputMonth <= 12) {
+  month = inputMonth - 1;
 }
 
 console.log(`      ${month + 1}月 ${year}`);
