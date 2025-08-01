@@ -38,8 +38,10 @@ for (let day = 1; day <= lastDate.getDate(); day++) {
   const isLastDay = day === lastDate.getDate();
 
   output += paddedDay;
-  if (!isLastDay) {
-    output += isSaturday ? "\n" : " ";
+  if (!isLastDay && isSaturday) {
+    output += "\n";
+  } else if (!isLastDay) {
+    output += " ";
   }
 }
 console.log(output);
