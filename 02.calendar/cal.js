@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
 const args = process.argv;
-const today = new Date();
-let year = today.getFullYear();
-let month = today.getMonth();
 let inputYear;
 let inputMonth;
 
@@ -15,6 +12,9 @@ for (let i = 0; i < args.length; i++) {
     inputMonth = parseInt(args[i + 1]);
   }
 }
+const today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth();
 
 if (1970 <= inputYear && inputYear <= 2100) {
   year = inputYear;
