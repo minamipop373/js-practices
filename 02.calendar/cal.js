@@ -36,15 +36,15 @@ let output = "   ".repeat(firstDate.getDay());
 for (let day = 1; day <= lastDate.getDate(); day++) {
   const paddedDay = String(day).padStart(2, " ");
   const isSaturday = (firstDate.getDay() + day - 1) % 7 === 6;
-  const isLastDay = day === lastDate.getDate();
 
   output += paddedDay;
-  if (isLastDay) {
-    output += "";
-  } else if (isSaturday) {
-    output += "\n";
-  } else {
-    output += " ";
+
+  if (day < lastDate.getDate()) {
+    if (isSaturday) {
+      output += "\n";
+    } else {
+      output += " ";
+    }
   }
 }
 
