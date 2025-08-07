@@ -39,12 +39,10 @@ for (let day = 1; day <= lastDate.getDate(); day++) {
 
   output += paddedDay;
 
-  if (day < lastDate.getDate()) {
-    if (isSaturday) {
-      output += "\n";
-    } else {
-      output += " ";
-    }
+  if (isSaturday) {
+    output += "\n";
+  } else {
+    output += " ";
   }
 }
 
